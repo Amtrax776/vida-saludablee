@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Saludable - Estilo Moderno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00c6ff;
+            --secondary-color: #0072ff;
+            --accent-color: #00ff88;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Fondo con imagen y partículas */
+        #background-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
+        
+        #background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        /* Header transparente */
+        header {
+            background: transparent;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        header p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            color: var(--white);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        /* Navegación moderna */
+        nav {
+            background-color: var(--white);
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        nav a {
+            margin: 0 1.2rem;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav a:hover::before {
+            width: 100%;
+        }
+        
+        /* Secciones con efecto de vidrio */
+        section {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Títulos con bordes iluminativos */
+        h2 {
+            color: var(--dark-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: none;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 1.8rem 0 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        /* Contenedor de imágenes mejorado */
+        .img-container {
+            margin: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .img-container:hover img {
+            transform: scale(1.03);
+        }
+        
+        .img-caption {
+            font-style: italic;
+            color: #777;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Contenedores multimedia */
+        .video-container, .audio-container {
+            margin: 2.5rem 0;
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        iframe {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tablas con bordes iluminativos */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: none;
+        }
+        
+        th {
+            background: var(--gradient);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(0, 198, 255, 0.05);
+        }
+        
+        tr:hover {
+            background-color: rgba(0, 198, 255, 0.1);
+        }
+        
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Listas estilizadas */
+        ul, ol {
+            padding-left: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            list-style-type: none;
+            padding-left: 1.8rem;
+        }
+        
+        ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+        
+        ol {
+            counter-reset: item;
+        }
+        
+        ol li {
+            counter-increment: item;
+        }
+        
+        ol li::before {
+            content: counter(item);
+            background: var(--gradient);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 1.5em;
+            height: 1.5em;
+            text-align: center;
+            display: inline-block;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+            margin-right: 0.5em;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        /* Elementos destacados */
+        .highlight {
+            background: linear-gradient(to right, rgba(0, 198, 255, 0.1), rgba(0, 114, 255, 0.1));
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #555;
+            background: rgba(0, 198, 255, 0.05);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(0, 198, 255, 0.1);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+        
+        /* Tarjetas de beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .benefit-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Grid de imágenes */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .img-grid-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .img-grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .img-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .img-grid-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Footer moderno */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer p:first-child {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Efectos de iluminación */
+        .glow-border {
+            position: relative;
+        }
+        
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient);
+            z-index: -1;
+            border-radius: inherit;
+            filter: blur(5px);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-border:hover::after {
+            opacity: 1;
+        }
+        
+        /* Animaciones */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            header p {
+                font-size: 1.3rem;
+            }
+            
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            section {
+                padding: 1.8rem;
+            }
+            
+            nav a {
+                margin: 0.3rem;
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .benefits-grid, .img-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .img-grid-item {
+                aspect-ratio: 16 / 9;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            header {
+                padding: 4rem 0;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 0.3rem 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo con imagen y partículas -->
+    <div id="background-container">
+        <img id="background-image" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fondo saludable">
+        <div id="particles-js"></div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <h1 class="floating">Estilos de Vida Saludables</h1>
+            <p>Descubre cómo mejorar tu bienestar físico y mental con hábitos modernos y sostenibles</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav class="glow-border">
+            <a href="#salud-mental">Salud Mental</a>
+            <a href="#ejercicio">Ejercicio</a>
+            <a href="#alimentacion">Nutrición</a>
+            <a href="#sueno">Sueño</a>
+            <a href="#habitos">Hábitos</a>
+            <a href="#prevencion">Prevención</a>
+            <a href="#tecnologia">Tecnología</a>
+        </nav>
+        
+        <section id="salud-mental">
+            <h2>Salud Mental y Bienestar Emocional</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Persona meditando al aire libre">
+                <p class="img-caption">La meditación puede mejorar significativamente tu salud mental</p>
+            </div>
+            
+            <p>En la era digital, cuidar de nuestra salud mental se ha vuelto más crucial que nunca. El estrés crónico, la ansiedad y el burnout son desafíos comunes que enfrentamos en nuestra vida cotidiana. Según la Organización Mundial de la Salud (OMS), la salud mental es un componente fundamental del bienestar general, afectando nuestra capacidad para pensar, emocionarnos, interactuar con otros y disfrutar de la vida.</p>
+            
+            <div class="quote">
+                "Cuidar tu mente es tan importante como cuidar tu cuerpo. En un mundo acelerado, la salud mental es la base para una vida plena, productiva y resiliente."
+            </div>
+            
+            <h3>Estrategias Modernas para el Bienestar Mental:</h3>
+            <ul>
+                <li><span class="highlight">Tecnología consciente</span>: Usa apps de mindfulness como Headspace o Calm para meditaciones guiadas. Establece límites de tiempo en redes sociales.</li>
+                <li><span class="highlight">Terapia digital</span>: Plataformas como BetterHelp ofrecen terapia en línea con profesionales certificados.</li>
+                <li><span class="highlight">Microdescansos</span>: Implementa la técnica Pomodoro (25min trabajo/5min descanso) para mejorar el enfoque.</li>
+                <li><span class="highlight">Journaling digital</span>: Lleva un diario de gratitud o emociones usando apps como Day One o Journey.</li>
+                <li><span class="highlight">Naturaleza urbana</span>: Incorpora plantas en tu espacio de trabajo y busca parques urbanos para conectar con la naturaleza.</li>
+            </ul>
+            
+            <h3>Estadísticas Relevantes:</h3>
+            <table>
+                <tr>
+                    <th>Indicador</th>
+                    <th>Dato</th>
+                    <th>Fuente</th>
+                </tr>
+                <tr>
+                    <td>Personas con ansiedad</td>
+                    <td>284 millones (2017)</td>
+                    <td>OMS</td>
+                </tr>
+                <tr>
+                    <td>Efectividad terapia online</td>
+                    <td>75% reporta mejoría</td>
+                    <td>Journal of Affective Disorders</td>
+                </tr>
+                <tr>
+                    <td>Reducción estrés con mindfulness</td>
+                    <td>Hasta 40%</td>
+                    <td>Harvard Health</td>
+                </tr>
+                <tr>
+                    <td>Uso apps salud mental</td>
+                    <td>+300% desde 2020</td>
+                    <td>Sensor Tower</td>
+                </tr>
+            </table>
+            
+            <div class="img-grid">
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Persona escribiendo en un diario">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Grupo de amigos riendo">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Persona en terapia con profesional">
+                </div>
+            </div>
+            
+            <div class="video-container glow-border">
+                <h3>Video: Técnicas de respiración para reducir el estrés en 5 minutos</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/inpok4MKVLM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <h3>Recursos Digitales Recomendados:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>Headspace</h3>
+                    <p>App de meditación con programas específicos para estrés, sueño y enfoque. Ideal para principiantes.</p>
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona feliz después de meditar">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Daylio</h3>
+                    <p>Diario de humor que permite rastrear emociones y hábitos sin necesidad de escribir mucho texto.</p>
+                    <img src="https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona usando app en celular">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Forest</h3>
+                    <p>App que promueve el enfoque plantando árboles virtuales mientras evitas distracciones en tu teléfono.</p>
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Teléfono mostrando app Forest">
+                </div>
+            </div>
+        </section>
+        
+        <section id="ejercicio">
+            <h2>Ejercicio en la Era Moderna</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Persona haciendo ejercicio al aire libre">
+                <p class="img-caption">El ejercicio regular adaptado a tu estilo de vida es clave para la salud</p>
+            </div>
+            
+            <p>El movimiento es medicina, y en la actualidad existen más opciones que nunca para mantenerse activo. Desde wearables que monitorizan tu actividad hasta entrenamientos en realidad virtual, la tecnología ha revolucionado cómo nos ejercitamos. La OMS recomienda al menos 150 minutos de actividad moderada o 75 minutos de actividad intensa por semana para adultos.</p>
+            
+            <h3>Tendencias Actuales en Fitness:</h3>
+            <ul>
+                <li><span class="highlight">Entrenamiento en casa</span>: Plataformas como Peloton, Nike Training Club y Apple Fitness+ ofrecen clases profesionales desde tu hogar.</li>
+                <li><span class="highlight">Wearables</span>: Dispositivos como Apple Watch, Fitbit y Whoop monitorizan actividad, sueño y recuperación.</li>
+                <li><span class="highlight">Realidad virtual</span>: Apps como Supernatural y FitXR ofrecen entrenamientos inmersivos con VR.</li>
+                <li><span class="highlight">Entrenamiento por IA</span>: Aplicaciones que adaptan rutinas a tu nivel y progreso usando inteligencia artificial.</li>
+                <li><span class="highlight">Micro-workouts</span>: Sesiones cortas de 5-10 minutos a lo largo del día para quienes tienen poco tiempo.</li>
+            </ul>
+            
+            <h3>Comparativa de Dispositivos Wearables:</h3>
+            <table>
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Precio</th>
+                    <th>Características</th>
+                    <th>Batería</th>
+                </tr>
+                <tr>
+                    <td>Apple Watch Series 8</td>
+                    <td>$399+</td>
+                    <td>ECG, oxígeno en sangre, seguimiento ciclo menstrual, detección caídas</td>
+                    <td>18 horas</td>
+                </tr>
+                <tr>
+                    <td>Fitbit Charge 5</td>
+                    <td>$179</td>
+                    <td>Monitor estrés EDA, GPS integrado, pantalla color</td>
+                    <td>7 días</td>
+                </tr>
+                <tr>
+                    <td>Whoop 4.0</td>
+                    <td>$30/mes</td>
+                    <td>Enfoque en recuperación, sin pantalla, análisis avanzado de sueño</td>
+                    <td>5 días</td>
+                </tr>
+                <tr>
+                    <td>Garmin Venu 2</td>
+                    <td>$399</td>
+                    <td>Pantalla AMOLED, +25 modos deporte, hidratación y respiración</td>
+                    <td>11 días</td>
+                </tr>
+            </table>
+            
+            <h3>Beneficios Científicos del Ejercicio:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>Salud Cerebral</h3>
+                    <p>Aumenta el BDNF (factor neurotrófico derivado del cerebro), mejorando memoria y aprendizaje.</p>
+                    <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cerebro saludable">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Longevidad</h3>
+                    <p>15 minutos diarios pueden aumentar 3 años de esperanza de vida (estudio de 400,000 personas).</p>
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona mayor activa">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Metabolismo</h3>
+                    <p>El HIIT puede aumentar tu metabolismo hasta 48 horas post-ejercicio (efecto EPOC).</p>
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Metabolismo activo">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Salud Mental</h3>
+                    <p>Libera endorfinas, reduce cortisol (hormona del estrés) en un 20-30% después del ejercicio.</p>
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona feliz después de ejercitar">
+                </div>
+            </div>
+            
+            <div class="video-container glow-border">
+                <h3>Video: Rutina de 15 minutos para hacer en casa sin equipo</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/UBMk30rjy0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="alimentacion">
+            <h2>Nutrición Inteligente</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Variedad de alimentos saludables">
+                <p class="img-caption">Una dieta balanceada y sostenible es clave para la salud a largo plazo</p>
+            </div>
+            
+            <p>La nutrición moderna va más allá de las calorías, enfocándose en la calidad de los alimentos, su densidad nutricional y su impacto en el microbioma intestinal. Nuevas investigaciones destacan la importancia de los alimentos fermentados, los fitonutrientes y los tiempos de alimentación (como el ayuno intermitente) para la salud metabólica.</p>
+            
+            <div class="quote">
+                "Deja que la comida sea tu medicina y la medicina sea tu comida." - Hipócrates (y la ciencia moderna lo confirma)
+            </div>
+            
+            <h3>Tendencias en Nutrición 2023:</h3>
+            <ul>
+                <li><span class="highlight">Alimentación intuitiva</span>: Escuchar las señales de hambre/saciedad en lugar de contar calorías.</li>
+                <li><span class="highlight">Microbioma intestinal</span>: Consumo de probióticos (kéfir, kimchi) y prebióticos (ajo, cebolla).</li>
+                <li><span class="highlight">Plant-based flexitariana</span>: Más vegetales sin eliminar completamente productos animales.</li>
+                <li><span class="highlight">Ayuno intermitente</span>: Patrones como 16:8 para mejorar sensibilidad a la insulina.</li>
+                <li><span class="highlight">Alimentos funcionales</span>: Incorporación de superfoods como cúrcuma, matcha y moringa.</li>
+            </ul>
+            
+            <h3>Guía de Alimentos Esenciales:</h3>
+            <table>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Alimentos</th>
+                    <th>Beneficios</th>
+                    <th>Frecuencia</th>
+                </tr>
+                <tr>
+                    <td>Proteínas</td>
+                    <td>Salmón, huevos, lentejas, pollo</td>
+                    <td>Reparación muscular, saciedad</td>
+                    <td>Cada comida</td>
+                </tr>
+                <tr>
+                    <td>Grasas saludables</td>
+                    <td>Aguacate, nueces, aceite de oliva</td>
+                    <td>Salud cerebral, absorción vitaminas</td>
+                    <td>Diario</td>
+                </tr>
+                <tr>
+                    <td>Carbohidratos complejos</td>
+                    <td>Quinoa, batata, avena</td>
+                    <td>Energía sostenida, fibra</td>
+                    <td>Diario</td>
+                </tr>
+                <tr>
+                    <td>Vegetales</td>
+                    <td>Espinacas, brócoli, zanahorias</td>
+                    <td>Vitaminas, minerales, antioxidantes</td>
+                    <td>5-9 porciones/día</td>
+                </tr>
+                <tr>
+                    <td>Fermentados</td>
+                    <td>Kéfir, kimchi, chucrut</td>
+                    <td>Salud intestinal, inmunidad</td>
+                    <td>2-3 veces/semana</td>
+                </tr>
+            </table>
+            
+            <h3>Apps de Nutrición Recomendadas:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>MyFitnessPal</h3>
+                    <p>Base de datos masiva de alimentos, escaneo de códigos de barras y seguimiento de macros.</p>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Plato saludable">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Zero</h3>
+                    <p>Seguimiento de ayuno intermitente con recordatorios y artículos educativos.</p>
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Reloj mostrando horas de ayuno">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Fooducate</h3>
+                    <p>Escanea productos y recibe calificaciones nutricionales basadas en ciencia.</p>
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona escaneando comida">
+                </div>
+            </div>
+            
+            <div class="img-grid">
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Plato saludable">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ensalada colorida">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Frutas y verduras">
+                </div>
+            </div>
+            
+            <div class="video-container glow-border">
+                <h3>Video: Preparando 3 comidas saludables en menos de 30 minutos</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/Gmh_xMMJ2Pw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="sueno">
+            <h2>Ciencia del Sueño Reparador</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1548613053-3f1d3c7163b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Persona durmiendo plácidamente">
+                <p class="img-caption">El sueño de calidad es el tercer pilar de la salud, junto con nutrición y ejercicio</p>
+            </div>
+            
+            <p>En nuestra sociedad hiperconectada, el sueño suele ser lo primero que sacrificamos, pero es fundamental para la salud cognitiva, emocional y física. Durante el sueño ocurren procesos críticos como la consolidación de memoria, reparación celular y regulación hormonal. Los adultos necesitan 7-9 horas de sueño de calidad cada noche.</p>
+            
+            <h3>Ciclos del Sueño y su Importancia:</h3>
+            <table>
+                <tr>
+                    <th>Etapa</th>
+                    <th>Duración</th>
+                    <th>Función</th>
+                    <th>Características</th>
+                </tr>
+                <tr>
+                    <td>Fase 1 (Adormecimiento)</td>
+                    <td>1-5 minutos</td>
+                    <td>Transición vigilia-sueño</td>
+                    <td>Respiración y ritmo cardíaco se ralentizan</td>
+                </tr>
+                <tr>
+                    <td>Fase 2 (Sueño ligero)</td>
+                    <td>10-60 minutos</td>
+                    <td>Preparación para sueño profundo</td>
+                    <td>Disminuye temperatura corporal</td>
+                </tr>
+                <tr>
+                    <td>Fase 3 (Sueño profundo)</td>
+                    <td>20-40 minutos</td>
+                    <td>Reparación física</td>
+                    <td>Crecimiento muscular, reparación tejidos</td>
+                </tr>
+                <tr>
+                    <td>REM (Sueño paradójico)</td>
+                    <td>10-60 minutos</td>
+                    <td>Procesamiento emocional y memoria</td>
+                    <td>Sueños vívidos, cerebro activo</td>
+                </tr>
+            </table>
+            
+            <h3>Tecnología para Mejorar el Sueño:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>Oura Ring</h3>
+                    <p>Anillo que mide temperatura corporal, frecuencia cardíaca y movimientos para evaluar calidad de sueño.</p>
+                    <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Anillo Oura">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Sleep Cycle</h3>
+                    <p>App que analiza patrones de sueño y despierta en el momento óptimo (sueño ligero).</p>
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Teléfono mostrando app Sleep Cycle">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>White Noise Machines</h3>
+                    <p>Dispositivos que generan sonidos relajantes para enmascarar ruidos ambientales.</p>
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Máquina de sonido blanco">
+                </div>
+            </div>
+            
+            <h3>Higiene del Sueño - Recomendaciones Basadas en Evidencia:</h3>
+            <ol>
+                <li><span class="highlight">Ritmo circadiano</span>: Expón tus ojos a luz natural por la mañana y reduce luz azul 2h antes de dormir.</li>
+                <li><span class="highlight">Temperatura</span>: Mantén tu dormitorio entre 18-22°C (65-72°F) para facilitar el inicio del sueño.</li>
+                <li><span class="highlight">Rutina pre-sueño</span>: Crea un ritual de 30-60 minutos sin pantallas (lectura, meditación, música).</li>
+                <li><span class="highlight">Cafeína</span>: Evita después de las 2pm (su vida media es 5-6 horas).</li>
+                <li><span class="highlight">Alcohol</span>: Aunque induce sueño, fragmenta su calidad en la segunda mitad de la noche.</li>
+                <li><span class="highlight">Siestas</span>: Limítalas a 20-30 minutos antes de las 3pm para no afectar sueño nocturno.</li>
+            </ol>
+            
+            <div class="img-grid">
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Habitación oscura para dormir">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Reloj despertador">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona relajándose antes de dormir">
+                </div>
+            </div>
+            
+            <div class="video-container glow-border">
+                <h3>Video: Cómo sincronizar tu ritmo circadiano para dormir mejor</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/NAATB55oxeQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="habitos">
+            <h2>Hábitos Atómicos para el Éxito</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Persona comenzando el día con hábitos saludables">
+                <p class="img-caption">Pequeños hábitos diarios, grandes resultados a largo plazo</p>
+            </div>
+            
+            <p>Los hábitos constituyen aproximadamente el 40% de nuestro comportamiento diario. Según James Clear, autor de "Hábitos Atómicos", pequeños cambios del 1% acumulados a lo largo del tiempo pueden generar resultados extraordinarios. La clave está en diseñar sistemas, no solo establecer metas.</p>
+            
+            <div class="quote">
+                "No subestimes el poder de los pequeños hábitos. Cuando repites un comportamiento 1% mejor cada día, terminas siendo 37 veces mejor después de un año."
+            </div>
+            
+            <h3>Leyes para Crear Buenos Hábitos:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>1. Hacerlo obvio</h3>
+                    <p>Diseña tu ambiente para que las señales de tus hábitos sean visibles. Ej: Preparar la ropa de ejercicio la noche anterior.</p>
+                    <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ropa de ejercicio preparada">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>2. Hacerlo atractivo</h3>
+                    <p>Vincula el hábito con algo que disfrutes. Ej: Escuchar tu podcast favorito solo mientras haces ejercicio.</p>
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Persona ejercitando con audífonos">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>3. Hacerlo fácil</h3>
+                    <p>Reduce la fricción. Ej: Para meditar, deja el cojín en un lugar visible y usa una app guiada.</p>
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Espacio de meditación preparado">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>4. Hacerlo satisfactorio</h3>
+                    <p>Refuerzo inmediato. Ej: Registrar tus progresos en un tracker de hábitos para ver tu racha.</p>
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Diario de hábitos">
+                </div>
+            </div>
+            
+            <h3>Hábitos Matutinos de Alto Rendimiento:</h3>
+            <ol>
+                <li><span class="highlight">Hidratación</span>: 500ml de agua al despertar para rehidratar después del sueño.</li>
+                <li><span class="highlight">Luz solar</span>: 10-30 minutos de luz natural para regular el ritmo circadiano.</li>
+                <li><span class="highlight">Movimiento</span>: 5-10 minutos de estiramientos o yoga para activar el cuerpo.</li>
+                <li><span class="highlight">Enfoque</span>: 90-120 minutos de trabajo profundo en tu tarea más importante.</li>
+                <li><span class="highlight">Nutrición</span>: Desayuno rico en proteínas para estabilizar azúcar en sangre.</li>
+            </ol>
+            
+            <h3>Apps para Construir Hábitos:</h3>
+            <table>
+                <tr>
+                    <th>App</th>
+                    <th>Mejor para</th>
+                    <th>Característica única</th>
+                    <th>Costo</th>
+                </tr>
+                <tr>
+                    <td>Habitica</td>
+                    <td>Gamificación</td>
+                    <td>Convierte hábitos en un juego RPG</td>
+                    <td>Gratis (premium $5/mes)</td>
+                </tr>
+                <tr>
+                    <td>Streaks</td>
+                    <td>Minimalistas</td>
+                    <td>Seguimiento visual simple (iOS)</td>
+                    <td>$4.99</td>
+                </tr>
+                <tr>
+                    <td>Loop</td>
+                    <td>Analíticos</td>
+                    <td>Estadísticas detalladas de consistencia</td>
+                    <td>Gratis</td>
+                </tr>
+                <tr>
+                    <td>Fabulous</td>
+                    <td>Rutinas completas</td>
+                    <td>Programas basados en ciencia</td>
+                    <td>Gratis (premium $40/año)</td>
+                </tr>
+            </table>
+            
+            <div class="audio-container glow-border">
+                <h3>Audio: Meditación guiada para comenzar el día con energía</h3>
+                <audio controls style="width: 100%">
+                    <source src="https://example.com/meditacion-audio.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </section>
+        
+        <section id="prevencion">
+            <h2>Prevención Proactiva de Enfermedades</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Médico haciendo chequeo a paciente">
+                <p class="img-caption">La medicina preventiva es el futuro de la salud</p>
+            </div>
+            
+            <p>El 80% de las enfermedades crónicas (diabetes tipo 2, enfermedades cardiovasculares) son prevenibles con cambios en el estilo de vida. La medicina moderna está evolucionando hacia un enfoque predictivo y preventivo, utilizando tecnología como wearables, pruebas genéticas y biomarcadores avanzados.</p>
+            
+            <h3>Exámenes Preventivos por Edad y Género:</h3>
+            <table>
+                <tr>
+                    <th>Edad</th>
+                    <th>Hombres</th>
+                    <th>Mujeres</th>
+                    <th>Ambos</th>
+                </tr>
+                <tr>
+                    <td>20-30</td>
+                    <td>Autoexamen testicular</td>
+                    <td>Papanicolaou cada 3 años</td>
+                    <td>Presión arterial, colesterol, piel</td>
+                </tr>
+                <tr>
+                    <td>30-40</td>
+                    <td>Examen próstata (40+)</td>
+                    <td>Mamografía (40+), densidad ósea</td>
+                    <td>Glucosa en ayunas, función tiroidea</td>
+                </tr>
+                <tr>
+                    <td>40-50</td>
+                    <td>PSA (45+)</td>
+                    <td>Mamografía anual, densitometría</td>
+                    <td>Colonoscopia (45+), examen cardíaco</td>
+                </tr>
+                <tr>
+                    <td>50+</td>
+                    <td>Detección cáncer próstata</td>
+                    <td>Mamografía, detección cáncer ovario</td>
+                    <td>Colonoscopia, visión, audición, osteoporosis</td>
+                </tr>
+            </table>
+            
+            <h3>Tecnologías de Prevención Avanzada:</h3>
+            <ul>
+                <li><span class="highlight">Pruebas genéticas</span>: 23andMe, Nebula Genomics para conocer predisposiciones.</li>
+                <li><span class="highlight">Biomarcadores avanzados</span>: InsideTracker analiza 40+ biomarcadores sanguíneos.</li>
+                <li><span class="highlight">Escáneres corporales</span>: DEXA para composición corporal y densidad ósea.</li>
+                <li><span class="highlight">Monitoreo continuo</span>: CGMs (monitores de glucosa) para no diabéticos.</li>
+                <li><span class="highlight">Telemedicina</span>: Consultas preventivas con especialistas desde casa.</li>
+            </ul>
+            
+            <div class="img-grid">
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Vacunación">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Examen médico">
+                </div>
+                <div class="img-grid-item">
+                    <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chequeo cardíaco">
+                </div>
+            </div>
+            
+            <h3>Vacunación para Adultos:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>Influenza</h3>
+                    <p>Anual, especialmente importante para mayores de 65 y personas con condiciones crónicas.</p>
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Tétanos/Difteria</h3>
+                    <p>Refuerzo cada 10 años (Tdap o Td). Incluye tos ferina (Tdap) al menos una vez.</p>
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Neumocócica</h3>
+                    <p>Recomendada a los 65 años o antes para personas con ciertas condiciones médicas.</p>
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Herpes Zóster</h3>
+                    <p>Para adultos de 50 años o más, incluso si ya tuvieron culebrilla.</p>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "La medicina del futuro no será tratar enfermedades, sino prevenirlas mediante el conocimiento personalizado de nuestros riesgos y la optimización de nuestro estilo de vida." - Dr. Leroy Hood (Padre de la Medicina P4: Predictiva, Preventiva, Personalizada y Participativa)
+            </div>
+        </section>
+        
+        <section id="tecnologia">
+            <h2>Tecnología para la Salud</h2>
+            
+            <div class="img-container glow-border">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tecnología wearable para salud">
+                <p class="img-caption">La tecnología está revolucionando cómo monitoreamos y mejoramos nuestra salud</p>
+            </div>
+            
+            <p>La convergencia entre tecnología y salud está creando herramientas poderosas para el autocuidado y la prevención. Desde wearables que monitorean signos vitales hasta apps de telemedicina, estamos viviendo una revolución en el cuidado personal de la salud.</p>
+            
+            <h3>Tendencias en Salud Digital:</h3>
+            <ul>
+                <li><span class="highlight">Wearables avanzados</span>: Dispositivos que miden ECG, oxígeno en sangre, estrés y más.</li>
+                <li><span class="highlight">Telemedicina</span>: Consultas virtuales con especialistas desde cualquier lugar.</li>
+                <li><span class="highlight">Realidad virtual</span>: Para terapia de exposición, manejo del dolor y rehabilitación.</li>
+                <li><span class="highlight">Inteligencia artificial</span>: Diagnóstico asistido por IA y recomendaciones personalizadas.</li>
+                <li><span class="highlight">Blockchain en salud</span>: Historiales médicos seguros y portables.</li>
+            </ul>
+            
+            <h3>Dispositivos de Salud para el Hogar:</h3>
+            <table>
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Función</th>
+                    <th>Precio</th>
+                    <th>Precisión</th>
+                </tr>
+                <tr>
+                    <td>Withings BPM Core</td>
+                    <td>Presión arterial + ECG + estetoscopio</td>
+                    <td>$299</td>
+                    <td>Clínicamente validado</td>
+                </tr>
+                <tr>
+                    <td>Freestyle Libre 3</td>
+                    <td>Monitor glucosa continuo (sin pinchazos)</td>
+                    <td>$120/mes</td>
+                    <td>Muy alta</td>
+                </tr>
+                <tr>
+                    <td>Oura Ring Gen3</td>
+                    <td>Sueño, temperatura, actividad</td>
+                    <td>$299 + subscripción</td>
+                    <td>Alta</td>
+                </tr>
+                <tr>
+                    <td>QardioArm</td>
+                    <td>Presión arterial con app</td>
+                    <td>$99</td>
+                    <td>Clínicamente validado</td>
+                </tr>
+            </table>
+            
+            <h3>Futuro de la Salud Personalizada:</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card glow-border">
+                    <h3>Secuenciación Genómica</h3>
+                    <p>Por menos de $200 puedes conocer tus predisposiciones genéticas a enfermedades y rasgos.</p>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="ADN digital">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Microbioma Intestinal</h3>
+                    <p>Kits como Viome analizan tus bacterias intestinales para recomendaciones nutricionales personalizadas.</p>
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Microbioma intestinal">
+                </div>
+                <div class="benefit-card glow-border">
+                    <h3>Biomonitorización Continua</h3>
+                    <p>Sensores implantables o wearables que monitorean marcadores sanguíneos en tiempo real.</p>
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tecnología wearable">
+                </div>
+            </div>
+            
+            <div class="video-container glow-border">
+                <h3>Video: Cómo la tecnología está transformando el cuidado de la salud</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/jajIq9KShO8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Vida Saludable - Todos los derechos reservados</p>
+            <p>Diseñado para promover estilos de vida saludables en la era digital</p>
+            <p>Desarrollado con ❤️ por Chino Antrax ™🔥💸🕶 © 2025</p>
+        </div>
+    </footer>
+    
+    <!-- Script para partículas de fondo con múltiples configuraciones -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configuraciones de partículas (3 diseños diferentes)
+        const particlesConfigs = [
+            // Configuración 1: Partículas con conexiones
+            {
+                "particles": {
+                    "number": {
+                        "value": 120,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": ["#00c6ff", "#0072ff", "#00ff88", "#ffffff"]
+                    },
+                    "shape": {
+                        "type": ["circle", "triangle", "star"],
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 4,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 4,
+                            "size_min": 0.3,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 180,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 200,
+                            "size": 10,
+                            "duration": 2,
+                            "opacity": 0.8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 150,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 6
+                        },
+                        "remove": {
+                            "particles_nb": 3
+                        }
+                    }
+                },
+                "retina_detect": true
+            },
+            
+            // Configuración 2: Partículas en forma de burbujas
+            {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": ["#00c6ff", "#0072ff", "#00ff88"]
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 6,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 4,
+                            "size_min": 0.3,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "bounce",
+                        "bounce": true,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "bubble": {
+                            "distance": 200,
+                            "size": 15,
+                            "duration": 2,
+                            "opacity": 0.8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100,
+                            "duration": 0.4
+                        }
+                    }
+                },
+                "retina_detect": true
+            },
+            
+            // Configuración 3: Partículas con efecto nieve
+            {
+                "particles": {
+                    "number": {
+                        "value": 150,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "bottom",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "repulse": {
+                            "distance": 100,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            }
+        ];
+        
+        // Inicialización de partículas con configuración aleatoria
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleccionar configuración aleatoria
+            const randomConfig = particlesConfigs[Math.floor(Math.random() * particlesConfigs.length)];
+            
+            particlesJS('particles-js', randomConfig);
+            
+            // Cambiar configuración cada 30 segundos (opcional)
+            setInterval(() => {
+                const newConfig = particlesConfigs[Math.floor(Math.random() * particlesConfigs.length)];
+                particlesJS('particles-js', newConfig);
+            }, 30000);
+        });
+        
+        // Efecto smooth scroll para los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animación al hacer scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('section, .benefit-card, .img-container');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Establecer propiedades iniciales para la animación
+        window.addEventListener('load', function() {
+            const sections = document.querySelectorAll('section');
+            const cards = document.querySelectorAll('.benefit-card');
+            const images = document.querySelectorAll('.img-container');
+            
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.transitionDelay = '0.1s';
+            });
+            
+            images.forEach(img => {
+                img.style.opacity = '0';
+                img.style.transform = 'scale(0.95)';
+                img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
